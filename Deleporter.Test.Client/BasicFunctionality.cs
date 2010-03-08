@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Web.Hosting;
 using DeleporterCore.Client;
 using NUnit.Framework;
