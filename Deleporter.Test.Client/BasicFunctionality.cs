@@ -36,16 +36,10 @@ namespace DeleporterTest.Client
         }
 
         [Test]
-        public void CanReturnMultipleValuesViaAnonymousType()
+        public void DelegateRunsInRemoteAppDomain()
         {
-            var result = Deleporter.Run(() => {
-                return new {
-                    ServerTime = DateTime.UtcNow,
-                    WebApplicationPath = HostingEnvironment.ApplicationPhysicalPath
-                };
-            });
-            Assert.AreNotEqual(1, result.ServerTime);
-            //StringAssert.Contains("Deleporter.Test.Server", result.AppPath.ToString());
+            var result = Deleporter.Run(() => HostingEnvironment.ApplicationPhysicalPath);
+            StringAssert.Contains("Deleporter.Test.Server", result);
         }
     }
 }

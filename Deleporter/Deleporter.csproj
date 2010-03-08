@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
@@ -42,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyProvider.cs" />
+    <Compile Include="Configuration\DeleporterConfigurationSection.cs" />
     <Compile Include="FuncExecutionResult.cs" />
     <Compile Include="Configuration\NetworkConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
