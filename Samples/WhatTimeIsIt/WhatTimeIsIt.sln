@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatTimeIsIt", "WhatTimeIsIt\WhatTimeIsIt.csproj", "{7CA4AC8A-5459-4456-874F-95E4ADD5C4EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatTimeIsIt.IntegrationTest", "WhatTimeIsIt.IntegrationTest\WhatTimeIsIt.IntegrationTest.csproj", "{8969EB8E-4B39-4277-B23A-99ABF114C950}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CA4AC8A-5459-4456-874F-95E4ADD5C4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA4AC8A-5459-4456-874F-95E4ADD5C4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA4AC8A-5459-4456-874F-95E4ADD5C4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA4AC8A-5459-4456-874F-95E4ADD5C4EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8969EB8E-4B39-4277-B23A-99ABF114C950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8969EB8E-4B39-4277-B23A-99ABF114C950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8969EB8E-4B39-4277-B23A-99ABF114C950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8969EB8E-4B39-4277-B23A-99ABF114C950}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

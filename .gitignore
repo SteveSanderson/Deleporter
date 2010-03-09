@@ -1,0 +1,7 @@
+*.suo 
+*.user 
+bin 
+obj 
+*.pdb 
+_ReSharper*
+*.ReSharper.user
