@@ -35,8 +35,8 @@ namespace WhatTimeIsIt.IntegrationTest
 
             // Now see what it displays
             var html = GetPageHtml("/");
-            var message = ParseSimpleDomElement<string>(html, "extraInfo");
-            StringAssert.Contains("The world wide web hasn't been invented yet", message);
+            Assert.AreEqual(1975, ParseSimpleDomElement<DateTime>(html, "date").Year);
+            StringAssert.Contains("The world wide web hasn't been invented yet", ParseSimpleDomElement<string>(html, "extraInfo"));
         }
     }
 }
