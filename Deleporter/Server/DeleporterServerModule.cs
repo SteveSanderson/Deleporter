@@ -7,21 +7,26 @@ using System.Web;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using DeleporterCore.Configuration;
+using System.Threading;
 
 namespace DeleporterCore.Server
 {
     public class DeleporterServerModule : IHttpModule
     {
         private IChannel _remotingChannel;
+        private static int _hasCreatedChannel = 0;
 
         public void Init(HttpApplication app)
         {
             if (WasCompiledInDebugMode(app))
             {
-                // Start listening for connections
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof (DeleporterService), NetworkConfiguration.ServiceName, WellKnownObjectMode.Singleton);
-                _remotingChannel = NetworkConfiguration.CreateChannel();
-                ChannelServices.RegisterChannel(_remotingChannel, false);
+                if (Interlocked.Exchange(ref _hasCreatedChannel, 1) == 0)
+                {
+                    // Start listening for connections
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof (DeleporterService), NetworkConfiguration.ServiceName, WellKnownObjectMode.Singleton);
+                    _remotingChannel = NetworkConfiguration.CreateChannel();
+                    ChannelServices.RegisterChannel(_remotingChannel, false);
+                }
             } else
                 throw new InvalidOperationException("You should not enable Deleporter on production web servers. As a security precaution, Deleporter won't run if your ASP.NET application was compiled in Release mode. You need to remove DeleporterServerModule from your Web.config file. If you need to bypass this, the only way is to edit the Deleporter source code and remove this check.");
         }
